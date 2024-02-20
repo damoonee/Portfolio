@@ -1,0 +1,21 @@
+:root {
+  --primary: #EA7070;
+  --black: #00262A;
+  --primary-hover: #D36565;
+  --primary-active: #BB5A5A;
+  --dark-primary: green;
+  --black: #00262A;
+  --white: white;
+}
+
+:root {
+  --background: var(--white);
+}
+
+body.dark {
+  --background: var(--dark-primary);
+}
+
+body * {
+  background: var(--white);
+}

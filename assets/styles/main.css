@@ -1,0 +1,135 @@
+@import "colors.css";
+@import "reset.css";
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 1440px;
+}
+header .header-title {
+  display: flex;
+  flex-direction: column;
+  margin-left: 48px;
+}
+header .header-title h1 {
+  color: var(--black);
+  font-family: "Montserrat Alternates";
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 48px;
+  margin-bottom: 0;
+}
+header .header-title p {
+  color: var(--primary);
+  font-family: "Montserrat";
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 48px;
+  margin: 0;
+}
+header .header-nav {
+  display: flex;
+}
+header .header-nav a {
+  text-decoration: none;
+  color: var(--black);
+}
+header .header-nav ul {
+  display: flex;
+  gap: 20px;
+  list-style-type: none;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Montserrat";
+  align-items: center;
+}
+header .header-nav i {
+  color: var(--black);
+  font-size: 32px;
+  font-style: normal;
+}
+header .header-nav button {
+  border-radius: 32px;
+  background: var(--primary);
+  border: none;
+  cursor: pointer;
+  height: 45px;
+  width: 130px;
+}
+header .header-nav .link-button {
+  background: var(--primary);
+  font-family: "Montserrat";
+  font-size: 16px;
+  color: var(--white);
+}
+
+.banner {
+  margin-top: 60px;
+}
+.banner .banner-content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+.banner .banner-content .bienvenue {
+  font-size: 36px;
+  font-family: "Montserrat";
+  font-weight: 500;
+  color: var(--black);
+  text-indent: 10px;
+  margin-bottom: 0px;
+}
+.banner .banner-content .welcome {
+  font-family: "Montserrat Alternates";
+  font-size: 36px;
+  font-weight: 275;
+  color: var(--black);
+  text-indent: 10px;
+}
+.banner .banner-content .sous-titre {
+  font-family: "Montserrat";
+  font-size: 28px;
+  font-weight: 300;
+  color: var(--black);
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.banner .div-button {
+  display: flex;
+  justify-content: center;
+}
+.banner .div-button button {
+  border-radius: 32px;
+  background: var(--primary);
+  cursor: pointer;
+  height: 45px;
+  width: 130px;
+}
+.banner .div-button .link-button {
+  text-decoration: none;
+  color: var(--white);
+  font-family: "Montserrat";
+  font-size: 16px;
+  font-weight: 700;
+  background: var(--primary);
+}
+.banner .div-button .link {
+  border: none;
+}
+.banner .div-button .cv {
+  width: 80px;
+  height: 45px;
+  background: var(--white);
+  margin-right: 24px;
+}
+.banner .div-button .link-cv {
+  color: var(--black);
+  font-family: "Montserrat";
+  font-size: 16px;
+  text-decoration: none;
+  font-weight: 700;
+}
