@@ -64,6 +64,7 @@ header .header-nav .link-button {
   font-family: "Montserrat";
   font-size: 16px;
   color: var(--white);
+  font-weight: 700;
 }
 
 .banner {
@@ -125,6 +126,7 @@ header .header-nav .link-button {
   height: 45px;
   background: var(--white);
   margin-right: 24px;
+  border: 1px solid var(--black);
 }
 .banner .div-button .link-cv {
   color: var(--black);
