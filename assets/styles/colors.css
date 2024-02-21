@@ -3,9 +3,11 @@
   --black: #00262A;
   --primary-hover: #D36565;
   --primary-active: #BB5A5A;
-  --dark-primary: green;
+  --dark-primary: #FDC4B6;
   --black: #00262A;
   --white: white;
+  --secondary-alternate: #83C5BE;
+  --secondary: #006D77;
 }
 
 :root {
@@ -14,8 +16,4 @@
 
 body.dark {
   --background: var(--dark-primary);
-}
-
-body * {
-  background: var(--white);
 }
