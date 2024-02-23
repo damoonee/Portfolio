@@ -162,6 +162,9 @@ section .section-title h2 {
 section .section-title.secondary-alternate .line {
   background: var(--secondary-alternate);
 }
+section .section-title.dark-primary .line {
+  background: var(--dark-primary);
+}
 
 .projets .projet {
   display: flex;
@@ -238,6 +241,7 @@ section .section-title.secondary-alternate .line {
 .competence .skills {
   display: flex;
   align-items: center;
+  padding-bottom: 24px;
 }
 .competence .skills .title-skills {
   padding-right: 114px;
@@ -245,6 +249,12 @@ section .section-title.secondary-alternate .line {
   font-weight: 400;
   font-family: "Montserrat";
   line-height: 24px;
+}
+.competence .skills .title-skills.title-method {
+  padding-right: 56px;
+}
+.competence .skills .title-skills.title-others {
+  padding-right: 102px;
 }
 .competence .skills .capacity {
   gap: 24px;
@@ -264,4 +274,12 @@ section .section-title.secondary-alternate .line {
   align-items: center;
   padding: 16px 24px;
   line-height: 1;
+}
+.competence .skills .capacity .know.dark-primary {
+  background: var(--dark-primary);
+  color: var(--black);
+}
+.competence .skills .capacity .know.secondary-alternate {
+  background: var(--secondary-alternate);
+  color: var(--black);
 }

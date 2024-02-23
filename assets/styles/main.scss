@@ -184,6 +184,10 @@ section {
         &.secondary-alternate .line {
             background: var(--secondary-alternate);
         }
+
+        &.dark-primary .line {
+            background: var(--dark-primary);
+        }
     }
     
 
@@ -278,6 +282,7 @@ section {
     .skills {
         display: flex;
         align-items: center;
+        padding-bottom: 24px;
 
         .title-skills {
             padding-right: 114px;
@@ -285,6 +290,14 @@ section {
             font-weight: 400;
             font-family: 'Montserrat';
             line-height: 24px;
+
+            &.title-method {
+                padding-right: 56px;
+            }
+
+            &.title-others {
+                padding-right: 102px;
+            }
         }
 
         .capacity {
@@ -305,6 +318,16 @@ section {
                 align-items: center;
                 padding: 16px 24px;
                 line-height: 1;
+
+                &.dark-primary {
+                    background: var(--dark-primary);
+                    color: var(--black);
+                }
+
+                &.secondary-alternate {
+                    background: var(--secondary-alternate);
+                    color: var(--black);
+                }
             }
         }
     }
