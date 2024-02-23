@@ -5,13 +5,12 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
-    margin-right: 48px;
+    align-items: start;
+    padding: 48px 48px 48px 36px;
 
     .header-title {
         display: flex;
         flex-direction: column;
-        margin-left: 48px;
 
         h1 {
             color: var(--black);
@@ -37,7 +36,7 @@ header {
     .header-nav {
         display: flex;
 
-        a {
+        .link {
             text-decoration: none;
             color: var(--black);
         }
@@ -52,39 +51,48 @@ header {
             align-items: center;
         }
 
+        .icons {
+            gap: 16px;
+            display: flex;
+        }
+
         i {
             color: var(--black);
             font-size: 32px;
             font-style: normal;
         }
-
-        button {
-            border-radius: 32px;
-            background: var(--primary);
-            border: none;
-            cursor: pointer;
-            height: 45px;
-            width: 130px;
-        }
-
-        .link-button {
-            background: var(--primary);
-            font-family: "Montserrat";
-            font-size: 16px;
-            color: var(--white);
-            font-weight: 700;
-        }
     }
+}
+
+button {
+    border-radius: 32px;
+    background: var(--primary);
+    border: none;
+    cursor: pointer;
+    padding: 24px 20px;
+}
+
+.link-button {
+    background: var(--primary);
+    font-family: "Montserrat";
+    font-size: 16px;
+    color: var(--white);
+    font-weight: 700;
+    text-decoration: none;
 }
 
 .banner {
     margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
 
     .banner-content {
         display: flex;
         justify-content: center;
         flex-direction: column;
         text-align: center;
+        gap: 40px;
 
         .bienvenue {
             font-size: 36px;
@@ -92,7 +100,6 @@ header {
             font-weight: 500;
             color: var(--black);
             text-indent: 10px;
-            margin-bottom: 0px;
         }
 
         .welcome {
@@ -108,45 +115,33 @@ header {
             font-size: 28px;
             font-weight: 300;
             color: var(--black);
-            margin-top: 40px;
-            margin-bottom: 40px;
         }
     }
 
     .div-button {
         display: flex;
         justify-content: center;
+        padding: 24px 0px 24px 0px;
 
         button {
             border-radius: 32px;
             background: var(--primary);
             cursor: pointer;
-            height: 45px;
-            width: 130px;
-        }
-
-        .link-button {
-            text-decoration: none;
-            color: var(--white);
-            font-family: "Montserrat";
-            font-size: 16px;
-            font-weight: 700;
-            background: var(--primary);
+            padding: 24px 20px;
         }
 
         .link {
             border: none;
         }
 
-        .cv {
-            width: 90px;
-            height: 45px;
+        .white {
+            padding: 24px 20px;
             background: var(--white);
             margin-right: 24px;
             border: 1px solid var(--black);
         }
 
-        .link-cv {
+        .black {
             color: var(--black);
             font-family: "Montserrat";
             font-size: 16px;
@@ -156,28 +151,55 @@ header {
     }
 }
 
+section {
+    padding: 24px 48px;
+    
+    .section-title {
+        padding: 8px 0px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 48px;
+
+        .line {
+            height: 2px;
+            background: var(--dark-primary);
+
+            &:first-child {
+                width: 32px;
+            }
+
+            &:last-child {
+                flex: 1;
+            }
+        }
+
+        h2 {
+            color: black;
+            font-family: 'Montserrat';
+            font-size: 40px;
+            font-weight: 300;
+        }
+
+        &.secondary-alternate .line {
+            background: var(--secondary-alternate);
+        }
+    }
+    
+
+}
+
 .projets {
 
-    h2 {
-        color: black;
-        font-family: 'Montserrat';
-        font-size: 40px;
-        font-weight: 300;
-        margin-left: 48px
-    }
-
     .projet {
-        margin-left: 48px;
-        margin-right: 48px;
         display: flex;
         gap: 24px;
         justify-content: space-between;
-        margin-bottom: 60px;
 
         .card {
             background: var(--dark-primary);
             padding: 24px;
-            width: 23%;
+            width: 30%;
             display: flex;
             flex-direction: column;
             border-radius: 24px;
@@ -186,6 +208,7 @@ header {
             img {
                 height: 240px;
                 border-radius: 12px 12px 0px 0px;
+                object-fit: cover;
             }
 
             h3 {
@@ -219,15 +242,11 @@ header {
                 .liste-language {
                     border-radius: 16px;
                     background: var(--white);
-                    width: 60px;
-                    height: 25px;
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                }
-                
-                .javascript {
-                    width: 90px;
+                    padding: 8px 12px;
+                    line-height: 1;
                 }
             }
 
@@ -252,6 +271,41 @@ header {
             }
         }
     }
+}
 
+.competence {
 
+    .skills {
+        display: flex;
+        align-items: center;
+
+        .title-skills {
+            padding-right: 114px;
+            font-size: 24px;
+            font-weight: 400;
+            font-family: 'Montserrat';
+            line-height: 24px;
+        }
+
+        .capacity {
+            gap: 24px;
+            display: flex;
+            padding: 0;
+            margin: 0;
+            font-family: "Montserrat";
+            color: var(--white);
+            font-size: 24px;
+            font-weight: 700;
+
+            .know {
+                border-radius: 28px;
+                background:var(--primary);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 16px 24px;
+                line-height: 1;
+            }
+        }
+    }
 }

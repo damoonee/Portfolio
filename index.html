@@ -22,24 +22,22 @@
             <nav class="header-nav">
                 <ul>
                     <li>
-                        <a href="#Projets">projets</a>
+                        <a href="#projets" class="link">Projets</a>
                     </li>
                     <li>
-                        <a href="#Compétences">Compétences</a>
+                        <a href="#competences" class="link">Compétences</a>
                     </li>
                     <li>
-                        <a href="#Formations">Formations</a>
+                        <a href="#formations" class="link">Formations</a>
                     </li>
-                    <li>
+                    <li class="icons">
                         <i class="fa-brands fa-linkedin"></i>
-                    </li>
-                    <li>
                         <i class="fa-brands fa-github"></i>
                     </li>
                     <li>
                         <i class="fa-solid fa-moon"></i>
                     </li>
-                    <button><a href="#Contact" class="link-button">Me contacter</a></button>
+                    <button><a href="#contact" class="link-button">ME CONTACTER</a></button>
                 </ul>
             </nav>
         </header>
@@ -49,12 +47,16 @@
                 <p class="sous-titre">Je m'appelle Manon, j'ai 21 ans et je suis développeuse Front-End.</p>
             </div>
             <div class="div-button">
-                <button class="cv"><a href="#CV" class="link-cv">Mon cv</button>
-                <button class="link"><a href="#Contact" class="link-button">Me contacter</a></button>
+                <button class="white"><a href="#CV" class="black">MON CV</button>
+                <button><a href="#Contact" class="link-button">ME CONTACTER</a></button>
             </div>
         </section>
-        <section class="projets" id="#Projets">
-            <h2>PROJETS</h2>
+        <section class="projets" id="#projets">
+            <div class="section-title">
+                <span class="line"></span>
+                <h2>PROJETS</h2>
+                <span class="line"></span>
+            </div>
             <div class="projet">
                 <article class="card">
                     <img src="./assets/styles/images/Projet.jpg" alt="projet 1">
@@ -93,8 +95,45 @@
                 </article>
             </div>
         </section>
-        <section class="competence projets" id="#Compétences">
-            <h2>COMPÉTENCES</h2>
+        <section class="competence" id="#competences">
+            <div class="section-title secondary-alternate">
+                <span class="line"></span>
+                <h2>COMPÉTENCES</h2>
+                <span class="line"></span>
+            </div>
+            <div class="skills">
+                <div class="title-skills">
+                    <h3>FRONT</h3>
+                </div>
+                <ul class="capacity">
+                    <li class="know">HTML</li>
+                    <li class="know">CSS</li>
+                    <li class="know">Javascript</li>
+                    <li class="know">SCSS</li>
+                    <li class="know">React Native</li>
+                </ul>
+            </div>
+            <div class="skills">
+                <div class="title-skills">
+                    <h3>MÉTHODES</h3>
+                </div>
+                <ul class="capacity">
+                    <li class="know">GIT</li>
+                    <li class="know">Kanban</li>
+                    <li class="know">Agile</li>
+                </ul>
+            </div>
+            <div class="skills">
+                <div class="title-skills">
+                    <h3>AUTRES</h3>
+                </div>
+                <ul class="capacity">
+                    <li class="know">Requêtes API</li>
+                    <li class="know">Référencement web / SEO</li>
+                    <li class="know">Débogage</li>
+                    <li class="know">Animation CSS</li>
+                </ul>
+            </div>
         </section>
     </body>
 </html>

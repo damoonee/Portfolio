@@ -4,13 +4,12 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
-  margin-right: 48px;
+  align-items: start;
+  padding: 48px 48px 48px 36px;
 }
 header .header-title {
   display: flex;
   flex-direction: column;
-  margin-left: 48px;
 }
 header .header-title h1 {
   color: var(--black);
@@ -33,7 +32,7 @@ header .header-title p {
 header .header-nav {
   display: flex;
 }
-header .header-nav a {
+header .header-nav .link {
   text-decoration: none;
   color: var(--black);
 }
@@ -46,35 +45,45 @@ header .header-nav ul {
   font-family: "Montserrat";
   align-items: center;
 }
+header .header-nav .icons {
+  gap: 16px;
+  display: flex;
+}
 header .header-nav i {
   color: var(--black);
   font-size: 32px;
   font-style: normal;
 }
-header .header-nav button {
+
+button {
   border-radius: 32px;
   background: var(--primary);
   border: none;
   cursor: pointer;
-  height: 45px;
-  width: 130px;
+  padding: 24px 20px;
 }
-header .header-nav .link-button {
+
+.link-button {
   background: var(--primary);
   font-family: "Montserrat";
   font-size: 16px;
   color: var(--white);
   font-weight: 700;
+  text-decoration: none;
 }
 
 .banner {
   margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 .banner .banner-content {
   display: flex;
   justify-content: center;
   flex-direction: column;
   text-align: center;
+  gap: 40px;
 }
 .banner .banner-content .bienvenue {
   font-size: 36px;
@@ -82,7 +91,6 @@ header .header-nav .link-button {
   font-weight: 500;
   color: var(--black);
   text-indent: 10px;
-  margin-bottom: 0px;
 }
 .banner .banner-content .welcome {
   font-family: "Montserrat Alternates";
@@ -96,39 +104,28 @@ header .header-nav .link-button {
   font-size: 28px;
   font-weight: 300;
   color: var(--black);
-  margin-top: 40px;
-  margin-bottom: 40px;
 }
 .banner .div-button {
   display: flex;
   justify-content: center;
+  padding: 24px 0px 24px 0px;
 }
 .banner .div-button button {
   border-radius: 32px;
   background: var(--primary);
   cursor: pointer;
-  height: 45px;
-  width: 130px;
-}
-.banner .div-button .link-button {
-  text-decoration: none;
-  color: var(--white);
-  font-family: "Montserrat";
-  font-size: 16px;
-  font-weight: 700;
-  background: var(--primary);
+  padding: 24px 20px;
 }
 .banner .div-button .link {
   border: none;
 }
-.banner .div-button .cv {
-  width: 90px;
-  height: 45px;
+.banner .div-button .white {
+  padding: 24px 20px;
   background: var(--white);
   margin-right: 24px;
   border: 1px solid var(--black);
 }
-.banner .div-button .link-cv {
+.banner .div-button .black {
   color: var(--black);
   font-family: "Montserrat";
   font-size: 16px;
@@ -136,25 +133,45 @@ header .header-nav .link-button {
   font-weight: 700;
 }
 
-.projets h2 {
+section {
+  padding: 24px 48px;
+}
+section .section-title {
+  padding: 8px 0px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+section .section-title .line {
+  height: 2px;
+  background: var(--dark-primary);
+}
+section .section-title .line:first-child {
+  width: 32px;
+}
+section .section-title .line:last-child {
+  flex: 1;
+}
+section .section-title h2 {
   color: black;
   font-family: "Montserrat";
   font-size: 40px;
   font-weight: 300;
-  margin-left: 48px;
 }
+section .section-title.secondary-alternate .line {
+  background: var(--secondary-alternate);
+}
+
 .projets .projet {
-  margin-left: 48px;
-  margin-right: 48px;
   display: flex;
   gap: 24px;
   justify-content: space-between;
-  margin-bottom: 60px;
 }
 .projets .projet .card {
   background: var(--dark-primary);
   padding: 24px;
-  width: 23%;
+  width: 30%;
   display: flex;
   flex-direction: column;
   border-radius: 24px;
@@ -163,6 +180,8 @@ header .header-nav .link-button {
 .projets .projet .card img {
   height: 240px;
   border-radius: 12px 12px 0px 0px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .projets .projet .card h3 {
   font-family: "Montserrat";
@@ -193,14 +212,11 @@ header .header-nav .link-button {
 .projets .projet .card .language .liste-language {
   border-radius: 16px;
   background: var(--white);
-  width: 60px;
-  height: 25px;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.projets .projet .card .language .javascript {
-  width: 90px;
+  padding: 8px 12px;
+  line-height: 1;
 }
 .projets .projet .card .lien-projet {
   text-align: right;
@@ -217,4 +233,35 @@ header .header-nav .link-button {
 }
 .projets .projet .card-3 .projet-3 {
   color: var(--white);
+}
+
+.competence .skills {
+  display: flex;
+  align-items: center;
+}
+.competence .skills .title-skills {
+  padding-right: 114px;
+  font-size: 24px;
+  font-weight: 400;
+  font-family: "Montserrat";
+  line-height: 24px;
+}
+.competence .skills .capacity {
+  gap: 24px;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  font-family: "Montserrat";
+  color: var(--white);
+  font-size: 24px;
+  font-weight: 700;
+}
+.competence .skills .capacity .know {
+  border-radius: 28px;
+  background: var(--primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 24px;
+  line-height: 1;
 }
