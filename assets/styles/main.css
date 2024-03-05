@@ -165,6 +165,9 @@ section .section-title.secondary-alternate .line {
 section .section-title.dark-primary .line {
   background: var(--dark-primary);
 }
+section .section-title.primary .line {
+  background: var(--primary);
+}
 
 .projets .projet {
   display: flex;
@@ -282,4 +285,150 @@ section .section-title.dark-primary .line {
 .competence .skills .capacity .know.secondary-alternate {
   background: var(--secondary-alternate);
   color: var(--black);
+}
+
+.training .training-content {
+  border-left: 12px solid var(--primary);
+  border-radius: 8px;
+  display: flex;
+  gap: 96px;
+  padding: 17px 0px 0px 17px;
+}
+.training .date {
+  color: var(--Black, #00262A);
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 20px;
+}
+.training .title-training {
+  color: var(--Black, #00262A);
+  font-family: Montserrat;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+}
+.training .school {
+  color: var(--Black, #00262A);
+  font-family: Montserrat;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+}
+.training .diploma-content {
+  margin-top: 24px;
+}
+.training .diploma {
+  color: var(--Black, #00262A);
+  font-family: Montserrat;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.contact ul {
+  display: flex;
+  gap: 48px;
+  list-style-type: none;
+  font-size: 24px;
+  font-weight: 400;
+  font-family: "Montserrat";
+  align-items: center;
+}
+.contact ul span {
+  gap: 16px;
+  border-radius: 24px;
+  background: var(--black);
+  color: var(--white);
+  padding: 12px 16px;
+}
+.contact ul span.secondary {
+  background: var(--secondary);
+}
+.contact ul .icon-contact {
+  font-size: 24px;
+  font-weight: 900;
+}
+.contact form {
+  margin-top: 48px;
+  background: var(--dark-primary);
+  padding: 32px 24px;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  font-family: "Montserrat";
+  font-size: 24px;
+  font-weight: 400;
+}
+.contact form .form-details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.contact form .title-form {
+  font-weight: 700;
+  height: 40px;
+  font-size: 32px;
+}
+.contact form .contact-details {
+  display: flex;
+  gap: 48px;
+}
+.contact form .contact-details div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 8px;
+}
+.contact form .contact-details div input {
+  border-radius: 28px;
+  border: none;
+  padding: 16px 24px;
+}
+.contact form .object {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.contact form .send-message {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.contact form input {
+  border-radius: 28px;
+  border: none;
+  padding: 16px 24px;
+}
+.contact form .message {
+  height: 200px;
+}
+
+.paragraph {
+  text-align: center;
+  color: var(--Black);
+  font-family: Montserrat;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 40px;
+  margin-top: 60px;
+}
+
+footer {
+  display: flex;
+  margin-top: 60px;
+  background: var(--black);
+  color: white;
+}
+footer .column-footer {
+  display: flex;
+  flex-direction: column;
+}
+footer .column-footer .title-column {
+  color: var(--White);
+  font-family: "Montserrat Alternates";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
 }
