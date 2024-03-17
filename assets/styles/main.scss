@@ -1,6 +1,10 @@
 @import "colors.css";
 @import "reset.css";
 
+body {
+    background-color: var(--background);
+}
+
 header {
     display: flex;
     flex-direction: row;
@@ -13,7 +17,7 @@ header {
         flex-direction: column;
 
         h1 {
-            color: var(--black);
+            color: var(--text);
             font-family: "Montserrat Alternates";
             font-size: 48px;
             font-style: normal;
@@ -34,7 +38,10 @@ header {
     }
 
     .header-nav {
-        display: flex;
+
+        .header-close {
+            display: none;
+        }
 
         .link {
             text-decoration: none;
@@ -61,7 +68,26 @@ header {
             font-size: 32px;
             font-style: normal;
         }
+
+        .button-animation {
+            transition-duration: 0.25s;
+        }
+    
+        .button-animation:hover {
+            background: var(--primary-hover);
+        }
     }
+
+    .header-burger {
+        display: none;
+
+        svg {
+            stroke: var(--primary);
+            width: 22px;
+            height: 22px;
+        }
+    }
+
 }
 
 button {
@@ -73,10 +99,9 @@ button {
 }
 
 .link-button {
-    background: var(--primary);
     font-family: "Montserrat";
     font-size: 16px;
-    color: var(--white);
+    color: var(--reverse-text);
     font-weight: 700;
     text-decoration: none;
 }
@@ -128,6 +153,15 @@ button {
             background: var(--primary);
             cursor: pointer;
             padding: 24px 20px;
+            position: relative;
+        }
+
+        .button-animation {
+            transition-duration: 0.25s;
+        }
+    
+        .button-animation:hover {
+            background: var(--primary-hover);
         }
 
         .link {
@@ -348,14 +382,14 @@ section {
     }
 
     .date {
-        color: var(--Black, #00262A);
+        color: var(--Black);
         text-align: center;
         font-family: Montserrat;
         font-size: 20px;
     }
 
     .title-training {
-        color: var(--Black, #00262A);
+        color: var(--Black);
         font-family: Montserrat;
         font-size: 28px;
         font-style: normal;
@@ -363,7 +397,7 @@ section {
     }
 
     .school {
-        color: var(--Black, #00262A);
+        color: var(--Black);
         font-family: Montserrat;
         font-size: 24px;
         font-style: normal;
@@ -427,53 +461,88 @@ section {
             display: flex;
             flex-direction: column;
             gap: 20px;
+
+            label {
+                margin-left: 20px;
+            }
+
+            .button-submit {
+                display: flex;
+                height: 80px;
+                flex: 1 0 0;
+                justify-content: flex-end;
+
+                button {
+                    background: var(--dark-primary-active);
+                    border-radius: 36px;
+                    padding: 24px;
+                    color: var(--black);
+                    font-family: Montserrat;
+                    font-size: 20px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: 20px;
+                }
+            }
         }
 
         .title-form {
             font-weight: 700;
             height: 40px;
             font-size: 32px;
+            margin-left: 20px;
         }
 
         .contact-details {
             display: flex;
             gap: 48px;
+        }
 
-            div {
-                display: flex;
-                flex-direction: column;
-                width: 100%;
-                gap: 8px;
+        div.input-div {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            gap: 8px;
 
-                input {
-                    border-radius: 28px;
-                    border: none;
-                    padding: 16px 24px;
+            label {
+                margin-left: 20px;
+            }
+
+            input,
+            textarea {
+                border-radius: 28px;
+                border: none;
+                padding: 16px 24px;
+    
+                font-family: "Montserrat";
+                color: var(--text);
+                font-size: 24px;
+                font-style: normal;
+                font-weight: 400;
+    
+                &::placeholder {
+                    color: var(--grey);
                 }
             }
         }
 
-        .object {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .send-message {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        input {
-            border-radius: 28px;
-            border: none;
-            padding: 16px 24px;
-        }
-
         .message {
             height: 200px;
+            resize: none;
+
+            &::-webkit-scrollbar {
+                width: 12px;
+            }
+            
+            &::-webkit-scrollbar-track {
+                display: none;
+            }
+            
+            /* Handle */
+            &::-webkit-scrollbar-thumb {
+                background: var(--primary);
+                border-radius: 6px;
+            }
         }
     }
 }
@@ -489,15 +558,76 @@ section {
     margin-top: 60px;
 }
 
+.cv {
+    width: 100%;
+    background: var(--secondary-alternate);
+    border-radius: 24px;
+    padding: 36px 48px;
+    text-align: left;
+    color: var(--Black);
+    font-family: Montserrat;
+    font-size: 40px;
+    font-weight: 300;
+
+    span {
+        color: var(--Black);
+        font-family: Montserrat;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+    }
+}
+
 footer {
     display: flex;
     margin-top: 60px;
     background: var(--black);
     color: white;
+    padding: 98px 48px;
+
+    .logo {
+        margin-bottom: 24px;
+    }
+
+    .title-footer {
+        width: 40%;
+
+        .name {
+            color: var(--White);
+            font-family: "Montserrat Alternates";
+            font-size: 32px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 32px;
+        }
+
+        .job {
+            color: var(--White, #FFF9F8);
+            font-family: Montserrat;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 24px;       
+        }
+    }
+
+    .footer-content {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
 
     .column-footer {
         display: flex;
         flex-direction: column;
+        gap: 24px;
+        color: var(--White);
+        font-family: Montserrat;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px;
 
         .title-column {
             color: var(--White);
@@ -505,6 +635,334 @@ footer {
             font-size: 24px;
             font-style: normal;
             font-weight: 500;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--White);
+        }
+    }
+}
+
+@media (max-width: 767.98px) {
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vh;
+        height: 100vh;
+        background-color: rgba(0,0,0,0.6);
+        display: none;
+    }
+
+    .overlay.open {
+        display: block;
+    }
+
+    section {
+
+        .section-title {
+            justify-content: center;
+
+            .line {
+                height: 2px;
+                background: var(--dark-primary);
+    
+                &:first-child {
+                    display: none;
+                }
+    
+                &:last-child {
+                    display: none;
+                }
+            }
+
+            h2 {
+                font-size: 32px;
+            }
+        }
+    }
+
+    header {
+
+        .header-nav {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 230px;
+            height: 102vh;
+            background-color: var(--dark-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: translate(100%);
+            transition: 0.3s transform ease-in-out;
+
+            .header-close {
+                display: block;
+
+                svg {
+                    stroke: var(--primary);
+                    width: 22px;
+                    height: 22px;
+                    position: absolute;
+                    top: 16px;
+                    right: 16px;
+                }
+            }
+
+            ul {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        .header-nav.open {
+            transform: initial;
+            display: flex;
+        }
+
+        .header-burger {
+            display: block;
+        }
+    }
+
+    .banner {
+        margin-top: 0px;
+
+        .banner-content {
+
+            .bienvenue {
+                font-size: 30px;
+            }
+
+            .welcome {
+                font-size: 30px;
+            }
+
+            .sous-titre {
+                font-size: 22px;
+            }
+        }
+
+        .div-button {
+
+            .black {
+                font-size: 12px;
+            }
+
+            .link-button {
+                font-size: 12px;
+            }
+        }
+    }
+
+    .projets {
+        .projet {
+            display: flex;
+            flex-direction: column;
+    
+            .card {
+                width: 83%;
+
+                img {
+                    height: 160px;
+                }
+                
+                .projet-content {
+                    font-size: 12px;
+                }
+
+                .language {
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+        }
+    }
+
+    .competence {
+
+        .skills {
+            flex-direction: column;
+            gap: 10px;
+
+            .capacity {
+                gap: 10px;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .title-skills {
+                display: contents;
+            }
+        }
+    }
+
+    .training {
+
+        .training-content {
+            gap: 50px;
+            flex-direction: column;
+        }
+
+        .title-training {
+            font-size: 15px;
+        }
+
+        .school {
+            font-size: 20px;
+        }
+
+        .diploma {
+            font-size: 17px;
+        }
+    }
+
+    .contact {
+
+        form {
+            font-size: 19px;
+
+            .form-details {
+                .button-submit {
+                    justify-content: center;
+
+                    button {
+                        font-size: 15px;
+                    }
+                }
+            }
+
+            .title-form {
+                font-size: 18px;
+                height: 20px;
+            }
+
+            .contact-details {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .message {
+                height: 100px;
+            }
+
+            input::placeholder {
+                font-family: "Montserrat";
+                color: var(--Grey, #D9C3C3);
+                font-size: 15px;
+                font-style: normal;
+                font-weight: 400;
+                align-items: flex-start;
+                display: flex;
+            }
+        }
+
+        ul {
+            font-size: 10px;
+
+            .icon-contact {
+                font-size: 10px;
+            }
+        }
+    }
+
+    .cv {
+        font-size: 17px;
+
+        span {
+            font-size: 15px;
+        }
+    }
+
+    .paragraph {
+        font-size: 32px;
+    }
+
+    footer {
+        flex-direction: column;
+
+        .title-footer {
+            width: 100%;
+            margin-bottom: 20px;
+
+            .name {
+                font-size: 30px;
+            }
+
+            .job {
+                font-size: 20px;
+            }
+        }
+
+        .footer-content {
+            flex-direction: column;
+            gap: 20px;
+
+            .column-footer {
+                font-size: 14px;
+
+                .title-column {
+                    font-size: 33px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+
+    .projets {
+
+        .projet {
+
+            .card {
+
+                img {
+                    height: 162px;
+                }
+
+                .projet-content {
+                    font-size: 13px;
+                }
+
+                .language {
+                    flex-wrap: wrap;
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+
+    .contact {
+        
+        ul {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
+    .competence {
+
+        .skills {
+            .capacity {
+                font-size: 13px;
+            }
+        }
+    }
+
+    footer {
+
+        .title-footer {
+            width: 37%;
         }
     }
 }

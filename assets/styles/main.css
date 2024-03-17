@@ -1,5 +1,9 @@
 @import "colors.css";
 @import "reset.css";
+body {
+  background-color: var(--background);
+}
+
 header {
   display: flex;
   flex-direction: row;
@@ -12,7 +16,7 @@ header .header-title {
   flex-direction: column;
 }
 header .header-title h1 {
-  color: var(--black);
+  color: var(--text);
   font-family: "Montserrat Alternates";
   font-size: 48px;
   font-style: normal;
@@ -29,8 +33,8 @@ header .header-title p {
   line-height: 48px;
   margin: 0;
 }
-header .header-nav {
-  display: flex;
+header .header-nav .header-close {
+  display: none;
 }
 header .header-nav .link {
   text-decoration: none;
@@ -54,6 +58,20 @@ header .header-nav i {
   font-size: 32px;
   font-style: normal;
 }
+header .header-nav .button-animation {
+  transition-duration: 0.25s;
+}
+header .header-nav .button-animation:hover {
+  background: var(--primary-hover);
+}
+header .header-burger {
+  display: none;
+}
+header .header-burger svg {
+  stroke: var(--primary);
+  width: 22px;
+  height: 22px;
+}
 
 button {
   border-radius: 32px;
@@ -64,10 +82,9 @@ button {
 }
 
 .link-button {
-  background: var(--primary);
   font-family: "Montserrat";
   font-size: 16px;
-  color: var(--white);
+  color: var(--reverse-text);
   font-weight: 700;
   text-decoration: none;
 }
@@ -115,6 +132,13 @@ button {
   background: var(--primary);
   cursor: pointer;
   padding: 24px 20px;
+  position: relative;
+}
+.banner .div-button .button-animation {
+  transition-duration: 0.25s;
+}
+.banner .div-button .button-animation:hover {
+  background: var(--primary-hover);
 }
 .banner .div-button .link {
   border: none;
@@ -295,20 +319,20 @@ section .section-title.primary .line {
   padding: 17px 0px 0px 17px;
 }
 .training .date {
-  color: var(--Black, #00262A);
+  color: var(--Black);
   text-align: center;
   font-family: Montserrat;
   font-size: 20px;
 }
 .training .title-training {
-  color: var(--Black, #00262A);
+  color: var(--Black);
   font-family: Montserrat;
   font-size: 28px;
   font-style: normal;
   font-weight: 700;
 }
 .training .school {
-  color: var(--Black, #00262A);
+  color: var(--Black);
   font-family: Montserrat;
   font-size: 24px;
   font-style: normal;
@@ -364,44 +388,77 @@ section .section-title.primary .line {
   flex-direction: column;
   gap: 20px;
 }
+.contact form .form-details label {
+  margin-left: 20px;
+}
+.contact form .form-details .button-submit {
+  display: flex;
+  height: 80px;
+  flex: 1 0 0;
+  justify-content: flex-end;
+}
+.contact form .form-details .button-submit button {
+  background: var(--dark-primary-active);
+  border-radius: 36px;
+  padding: 24px;
+  color: var(--black);
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+}
 .contact form .title-form {
   font-weight: 700;
   height: 40px;
   font-size: 32px;
+  margin-left: 20px;
 }
 .contact form .contact-details {
   display: flex;
   gap: 48px;
 }
-.contact form .contact-details div {
+.contact form div.input-div {
   display: flex;
   flex-direction: column;
   width: 100%;
   gap: 8px;
 }
-.contact form .contact-details div input {
+.contact form div.input-div label {
+  margin-left: 20px;
+}
+.contact form div.input-div input,
+.contact form div.input-div textarea {
   border-radius: 28px;
   border: none;
   padding: 16px 24px;
+  font-family: "Montserrat";
+  color: var(--text);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
 }
-.contact form .object {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+.contact form div.input-div input::-moz-placeholder, .contact form div.input-div textarea::-moz-placeholder {
+  color: var(--grey);
 }
-.contact form .send-message {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.contact form input {
-  border-radius: 28px;
-  border: none;
-  padding: 16px 24px;
+.contact form div.input-div input::placeholder,
+.contact form div.input-div textarea::placeholder {
+  color: var(--grey);
 }
 .contact form .message {
   height: 200px;
+  resize: none;
+  /* Handle */
+}
+.contact form .message::-webkit-scrollbar {
+  width: 12px;
+}
+.contact form .message::-webkit-scrollbar-track {
+  display: none;
+}
+.contact form .message::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 6px;
 }
 
 .paragraph {
@@ -415,15 +472,70 @@ section .section-title.primary .line {
   margin-top: 60px;
 }
 
+.cv {
+  width: 100%;
+  background: var(--secondary-alternate);
+  border-radius: 24px;
+  padding: 36px 48px;
+  text-align: left;
+  color: var(--Black);
+  font-family: Montserrat;
+  font-size: 40px;
+  font-weight: 300;
+}
+.cv span {
+  color: var(--Black);
+  font-family: Montserrat;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+}
+
 footer {
   display: flex;
   margin-top: 60px;
   background: var(--black);
   color: white;
+  padding: 98px 48px;
+}
+footer .logo {
+  margin-bottom: 24px;
+}
+footer .title-footer {
+  width: 40%;
+}
+footer .title-footer .name {
+  color: var(--White);
+  font-family: "Montserrat Alternates";
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 32px;
+}
+footer .title-footer .job {
+  color: var(--White, #FFF9F8);
+  font-family: Montserrat;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+footer .footer-content {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 footer .column-footer {
   display: flex;
   flex-direction: column;
+  gap: 24px;
+  color: var(--White);
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
 }
 footer .column-footer .title-column {
   color: var(--White);
@@ -431,4 +543,238 @@ footer .column-footer .title-column {
   font-size: 24px;
   font-style: normal;
   font-weight: 500;
+}
+footer .column-footer a {
+  text-decoration: none;
+  color: var(--White);
+}
+
+@media (max-width: 767.98px) {
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vh;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: none;
+  }
+  .overlay.open {
+    display: block;
+  }
+  section .section-title {
+    justify-content: center;
+  }
+  section .section-title .line {
+    height: 2px;
+    background: var(--dark-primary);
+  }
+  section .section-title .line:first-child {
+    display: none;
+  }
+  section .section-title .line:last-child {
+    display: none;
+  }
+  section .section-title h2 {
+    font-size: 32px;
+  }
+  header .header-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 230px;
+    height: 102vh;
+    background-color: var(--dark-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translate(100%);
+    transition: 0.3s transform ease-in-out;
+  }
+  header .header-nav .header-close {
+    display: block;
+  }
+  header .header-nav .header-close svg {
+    stroke: var(--primary);
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+  }
+  header .header-nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  header .header-nav.open {
+    transform: initial;
+    display: flex;
+  }
+  header .header-burger {
+    display: block;
+  }
+  .banner {
+    margin-top: 0px;
+  }
+  .banner .banner-content .bienvenue {
+    font-size: 30px;
+  }
+  .banner .banner-content .welcome {
+    font-size: 30px;
+  }
+  .banner .banner-content .sous-titre {
+    font-size: 22px;
+  }
+  .banner .div-button .black {
+    font-size: 12px;
+  }
+  .banner .div-button .link-button {
+    font-size: 12px;
+  }
+  .projets .projet {
+    display: flex;
+    flex-direction: column;
+  }
+  .projets .projet .card {
+    width: 83%;
+  }
+  .projets .projet .card img {
+    height: 160px;
+  }
+  .projets .projet .card .projet-content {
+    font-size: 12px;
+  }
+  .projets .projet .card .language {
+    display: flex;
+    flex-direction: column;
+  }
+  .competence .skills {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .competence .skills .capacity {
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .competence .skills .title-skills {
+    display: contents;
+  }
+  .training .training-content {
+    gap: 50px;
+    flex-direction: column;
+  }
+  .training .title-training {
+    font-size: 15px;
+  }
+  .training .school {
+    font-size: 20px;
+  }
+  .training .diploma {
+    font-size: 17px;
+  }
+  .contact form {
+    font-size: 19px;
+  }
+  .contact form .form-details .button-submit {
+    justify-content: center;
+  }
+  .contact form .form-details .button-submit button {
+    font-size: 15px;
+  }
+  .contact form .title-form {
+    font-size: 18px;
+    height: 20px;
+  }
+  .contact form .contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .contact form .message {
+    height: 100px;
+  }
+  .contact form input::-moz-placeholder {
+    font-family: "Montserrat";
+    color: var(--Grey, #D9C3C3);
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    align-items: flex-start;
+    display: flex;
+  }
+  .contact form input::placeholder {
+    font-family: "Montserrat";
+    color: var(--Grey, #D9C3C3);
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    align-items: flex-start;
+    display: flex;
+  }
+  .contact ul {
+    font-size: 10px;
+  }
+  .contact ul .icon-contact {
+    font-size: 10px;
+  }
+  .cv {
+    font-size: 17px;
+  }
+  .cv span {
+    font-size: 15px;
+  }
+  .paragraph {
+    font-size: 32px;
+  }
+  footer {
+    flex-direction: column;
+  }
+  footer .title-footer {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  footer .title-footer .name {
+    font-size: 30px;
+  }
+  footer .title-footer .job {
+    font-size: 20px;
+  }
+  footer .footer-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+  footer .footer-content .column-footer {
+    font-size: 14px;
+  }
+  footer .footer-content .column-footer .title-column {
+    font-size: 33px;
+  }
+}
+@media (max-width: 1024px) {
+  .projets .projet .card img {
+    height: 162px;
+  }
+  .projets .projet .card .projet-content {
+    font-size: 13px;
+  }
+  .projets .projet .card .language {
+    flex-wrap: wrap;
+    font-size: 15px;
+  }
+  .contact ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .competence .skills .capacity {
+    font-size: 13px;
+  }
+  footer .title-footer {
+    width: 37%;
+  }
 }

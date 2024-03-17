@@ -4,16 +4,27 @@
   --primary-hover: #D36565;
   --primary-active: #BB5A5A;
   --dark-primary: #FDC4B6;
+  --dark-primary-active: #CA9D92;
   --black: #00262A;
   --white: white;
   --secondary-alternate: #83C5BE;
   --secondary: #006D77;
+  --grey: #D9C3C3;
 }
 
 :root {
   --background: var(--white);
+  --text: var(--black);
+  --reverse-text: var(--white);
 }
 
 body.dark {
-  --background: var(--dark-primary);
+  --background: var(--black);
+  --text: var(--white);
+  --reverse-text: var(--black);
+  --primary: #FDC4B6;
+}
+
+body {
+  transition: color 0.25s, background-color 0.25s;
 }

@@ -13,13 +13,19 @@
         <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     </head>
-    <body class="dark">
+    <body class="">
+        <div class="overlay" onclick="closeMenuMobile()"></div>
         <header>
             <div class="header-title">  
                 <h1>Manon Marchau</h1>
                 <p>Développeuse Front-End</p>
             </div>
             <nav class="header-nav">
+                <div class="header-close" onclick="closeMenuMobile()">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                    </svg>                      
+                </div>
                 <ul>
                     <li>
                         <a href="#projets" class="link">Projets</a>
@@ -32,14 +38,19 @@
                     </li>
                     <li class="icons">
                         <i class="fa-brands fa-linkedin"></i>
-                        <i class="fa-brands fa-github"></i>
+                        <a href="https://github.com/damoonee"><i class="fa-brands fa-github"></i></a>
                     </li>
-                    <li>
-                        <i class="fa-solid fa-moon"></i>
+                    <li onclick="switchTheme()">
+                        <i class="theme-icon fa-solid fa-moon"></i>
                     </li>
-                    <button><a href="#contact" class="link-button">ME CONTACTER</a></button>
+                    <button class="button-animation"><a href="#contact" class="link-button">ME CONTACTER</a></button>
                 </ul>
             </nav>
+            <div class="header-burger" onclick="openMenuMobile()">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>  
+            </div>
         </header>
         <section class="banner">
             <div class="banner-content">
@@ -48,7 +59,7 @@
             </div>
             <div class="div-button">
                 <button class="white"><a href="cv" class="black">MON CV</button>
-                <button><a href="#contact" class="link-button">ME CONTACTER</a></button>
+                <button class="button-animation"><a href="#contact" class="link-button">ME CONTACTER</a></button>
             </div>
         </section>
         <section class="projets" id="projets">
@@ -61,7 +72,7 @@
                 <article class="card">
                     <img src="./assets/styles/images/16559011566667_FR_1117_P4_Banner-Ohmyfood.png" alt="Projet 1 Ohmyfood">
                     <h3>Ohmyfood</h3>
-                    <p class="projet-content">Résumer du projet</p>
+                    <p class="projet-content">OhMyFood est un projet lié à la restauration, en plus des systèmes classique de réservation, les clients pourront composer le menu de leur repas pour que les plats soient prêt à leur arrivée. Le but était de créer le site en mobile first, en utilisant HTML et SASS avec quelques animations comme un écran de chargement, un coeur qui se rempli au survol ou au clic et une validation de commande déplaçant le prix d'un article de menu.</p>
                     <ul class="language">
                         <li class="liste-language">HTML</li>
                         <li class="liste-language">SCSS</li>
@@ -72,7 +83,7 @@
                 <article class="card card-2">
                     <img src="./assets/styles/images/Projet.jpg" alt="projet 1">
                     <h3>Portfolio de Sophie Bluel</h3>
-                    <p class="projet-content">Résumer du projet</p>
+                    <p class="projet-content">En utiliser un backend déjà créé, j'ai importé dynamiquement avec JavaScript les projets réalisés par le designer d'intérieur, avec des filtres par catégories.</p>
                     <ul class="language">
                         <li class="liste-language">HTML</li>
                         <li class="liste-language">CSS</li>
@@ -170,49 +181,54 @@
                         <h4>Formulaire de contact</h4>
                     </div>
                     <div class="contact-details">
-                        <div>
+                        <div class="input-div">
                             <label for="nom">Nom</label>
                             <input type="text" id="nom" name="nom" placeholder="Votre nom">
                         </div>
-                        <div>
+                        <div class="input-div">
                             <label for="email">Adresse e-mail</label>
                             <input type="email" id="email" name="email" placeholder="Votre adresse e-mail">
                         </div>
                     </div>
                     <div class="form-details">
-                        <div class="object">
+                        <div class="input-div">
                             <label for="objet">Objet</label>
                             <input type="objet" id="objet" name="objet" placeholder="Sujet du message">
                         </div>
-                        <div class="send-message">
+                        <div class="input-div">
                             <label for="message">Message</label>
-                            <input class="message" type="message" id="message" name="message" placeholder="Votre message">
+                            <textarea class="message" id="message" name="message" placeholder="Votre message"></textarea>
                         </div>
+                    </div>
+                    <div class="button-submit">
+                        <button type="submit">ENVOYER</button>
                     </div>
                 </div>
             </form>
         </section>
         <section>
             <div>
-                <button>Curriculum Vitae <span>Découvrez mon CV en cliquant ici</span> <i class="fa-solid fa-chevron-right"></i></button>
+                <button class="cv">Curriculum Vitae <span>Découvrez mon CV en cliquant ici</span> <i class="fa-solid fa-chevron-right"></i></button>
             </div>
             <div class="paragraph">
                 <p>Paragraphe sur la réalisation du site</p>
             </div>
         </section>
         <footer>
-            <div class="column-footer">
-                <img src="./assets/styles/images/Logo.svg" alt="Logo portfolio">
-                <p>Manon Marchau</p>
-                <p>Développeuse Front-End</p>
+            <div class="title-footer">
+                <div class="logo">
+                    <img src="./assets/styles/images/Logo.svg" alt="Logo portfolio">
+                </div>
+                <p class="name">Manon Marchau</p>
+                <p class="job">Développeuse Front-End</p>
             </div>
-            <div>
+            <div class="footer-content">
                 <div class="column-footer">
                     <div class="title-column"><h5>Explorer</h5></div>
-                    <a>Projets</a>
-                    <a>Compétences</a>
-                    <a>Formation</a>
-                    <a>Contact</a>
+                    <a href="#projets">Projets</a>
+                    <a href="#competences">Compétences</a>
+                    <a href="#formation">Formation</a>
+                    <a href="#contact">Contact</a>
                     <a>Mon CV</a>
                 </div>
                 <div class="column-footer">
@@ -229,4 +245,5 @@
             </div>
         </footer>
     </body>
+    <script src="script.js"></script>
 </html>
