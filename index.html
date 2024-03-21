@@ -40,7 +40,7 @@
                         <i class="fa-brands fa-linkedin"></i>
                         <a href="https://github.com/damoonee"><i class="fa-brands fa-github"></i></a>
                     </li>
-                    <li onclick="switchTheme()">
+                    <li onclick="switchTheme()" class="switch-theme">
                         <i class="theme-icon fa-solid fa-moon"></i>
                     </li>
                     <button class="button-animation"><a href="#contact" class="link-button">ME CONTACTER</a></button>
@@ -70,7 +70,7 @@
             </div>
             <div class="projet">
                 <article class="card">
-                    <img src="./assets/styles/images/16559011566667_FR_1117_P4_Banner-Ohmyfood.png" alt="Projet 1 Ohmyfood">
+                    <img src="./assets/styles/images/16559011566667_FR_1117_P4_Banner-Ohmyfood.webp" alt="Projet 1 Ohmyfood">
                     <h3>Ohmyfood</h3>
                     <p class="projet-content">OhMyFood est un projet lié à la restauration, en plus des systèmes classique de réservation, les clients pourront composer le menu de leur repas pour que les plats soient prêt à leur arrivée. Le but était de créer le site en mobile first, en utilisant HTML et SASS avec quelques animations comme un écran de chargement, un coeur qui se rempli au survol ou au clic et une validation de commande déplaçant le prix d'un article de menu.</p>
                     <ul class="language">
@@ -81,9 +81,9 @@
                 </article>
 
                 <article class="card card-2">
-                    <img src="./assets/styles/images/Projet.jpg" alt="projet 1">
+                    <img src="./assets/styles/images/sophie-bluel-picture-1.webp" alt="projet 1">
                     <h3>Portfolio de Sophie Bluel</h3>
-                    <p class="projet-content">En utiliser un backend déjà créé, j'ai importé dynamiquement avec JavaScript les projets réalisés par le designer d'intérieur, avec des filtres par catégories.</p>
+                    <p class="projet-content">Ce projet à pour but de travailler sur la conception du site portfolio d'une architecte d'intérieur. En utilisant un backend déjà créé, j'ai importer dynamiquement avec JavaScript les projets réalisés par le designer d'intérieur, avec des filtres par catégories. J'ai également créé la page de connexion en faisant appel a une API avec une redirection vers la page d'acceuil lorsque l'administrateur est connecté avec succès. Pour finir, j'ai implémenté une modale sur la page d'acceuil, permettant a l'admin d'ajouter ou supprimer un travail dynamiquement.</p>
                     <ul class="language">
                         <li class="liste-language">HTML</li>
                         <li class="liste-language">CSS</li>
@@ -94,9 +94,9 @@
                 </article>
 
                 <article class="card card-3">
-                    <img src="./assets/styles/images/Projet.jpg" alt="projet 3 Kasa">
+                    <img src="./assets/styles/images/1680512368252_Kasa-logo.webp" alt="projet 3 Kasa">
                     <h3 class="projet-3">Kasa - Location immobilière</h3>
-                    <p class="projet-content projet-3">Résumer du projet</p>
+                    <p class="projet-content projet-3">Kasa est un leader dans la location d'appartement, le site de Kasa à été codé il y a plus de 10 ans le but étant de mettre à jour le code en utilisant des composant réutilisable. J'ai également utiliser React Router pour configurer la navigations entre les différents pages de l'application. Le site est également responsive.</p>
                     <ul class="language">
                         <li class="liste-language">HTML</li>
                         <li class="liste-language">CSS</li>
@@ -207,11 +207,15 @@
             </form>
         </section>
         <section>
-            <div>
-                <button class="cv">Curriculum Vitae <span>Découvrez mon CV en cliquant ici</span> <i class="fa-solid fa-chevron-right"></i></button>
-            </div>
+            <section class="section-content">
+                <a class="link-cv">
+                    Curriculum vitae
+                    <span>Découvrez mon CV en cliquant ici</span>
+                </a>
+                <i class="fa-solid fa-chevron-right"></i>
+            </section>
             <div class="paragraph">
-                <p>Paragraphe sur la réalisation du site</p>
+                <p>Pour la réalisation de mon portfolio j'ai utiliser du HTML, SCSS et Javascript. Dans ce portfolio, on retrouve mes contacts, les différents projets détailler pour permettre aux visiteur de voir ce que j'ai fait. J'ai également créé différentes annimations en SCSS et JavaScript, mise en place aussi d'un théme sombre et mise en place du site en responsive dont un menu burger en version mobile.</p>
             </div>
         </section>
         <footer>
@@ -225,11 +229,26 @@
             <div class="footer-content">
                 <div class="column-footer">
                     <div class="title-column"><h5>Explorer</h5></div>
-                    <a href="#projets">Projets</a>
-                    <a href="#competences">Compétences</a>
-                    <a href="#formation">Formation</a>
-                    <a href="#contact">Contact</a>
-                    <a>Mon CV</a>
+                    <a href="#projets" class="animation-link">
+                        <i class="fa-solid fa-arrow-right"></i>
+                        <span>Projets</span>
+                    </a>
+                    <a href="#competences" class="animation-link">
+                        <i class="fa-solid fa-arrow-right"></i>
+                        <span>Compétences</span>
+                    </a>
+                    <a href="#formation" class="animation-link">
+                        <i class="fa-solid fa-arrow-right"></i>
+                        <span>Formation</span>
+                    </a>
+                    <a href="#contact" class="animation-link">
+                        <i class="fa-solid fa-arrow-right"></i>
+                        <span>Contact</span>
+                    </a>
+                    <a href="#" class="animation-link">
+                        <i class="fa-solid fa-arrow-right"></i>
+                        <span>Mon CV</span>
+                    </a>
                 </div>
                 <div class="column-footer">
                     <div class="title-column"><h5>Réseau</h5></div>
@@ -238,7 +257,10 @@
                 </div>
                 <div class="column-footer">
                     <div class="title-column"><h5>Contact</h5></div>
-                    <a>Formulaire de contact</a>
+                    <a href="#" class="animation-link">
+                        <i class="fa-solid fa-arrow-right"></i>
+                        <span>Formulaire de contact</span>
+                    </a>
                     <a> <i class="fa-solid fa-at"></i> manonmarchaufromy@gmail.com</a>
                     <a> <i class="fa-solid fa-phone"></i> +33 6 21 48 84 91</a>
                 </div>

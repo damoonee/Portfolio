@@ -38,7 +38,7 @@ header .header-nav .header-close {
 }
 header .header-nav .link {
   text-decoration: none;
-  color: var(--black);
+  color: var(--text);
 }
 header .header-nav ul {
   display: flex;
@@ -49,12 +49,46 @@ header .header-nav ul {
   font-family: "Montserrat";
   align-items: center;
 }
+header .header-nav ul .switch-theme {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.25s;
+  cursor: pointer;
+}
+header .header-nav ul .switch-theme i {
+  z-index: 1;
+  transition: color 0.25s;
+}
+header .header-nav ul .switch-theme::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  top: 50%;
+  bottom: 50%;
+  border-radius: 50%;
+  background: var(--background-reverse);
+  transition: 0.25s;
+}
+header .header-nav ul .switch-theme:hover i {
+  color: var(--reverse-text);
+}
+header .header-nav ul .switch-theme:hover::before {
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+}
 header .header-nav .icons {
   gap: 16px;
   display: flex;
 }
 header .header-nav i {
-  color: var(--black);
+  color: var(--text);
   font-size: 32px;
   font-style: normal;
 }
@@ -63,6 +97,9 @@ header .header-nav .button-animation {
 }
 header .header-nav .button-animation:hover {
   background: var(--primary-hover);
+}
+header .header-nav .button-animation:active {
+  background: var(--primary-active);
 }
 header .header-burger {
   display: none;
@@ -74,11 +111,15 @@ header .header-burger svg {
 }
 
 button {
+  height: 64px;
   border-radius: 32px;
+  display: flex;
+  align-items: center;
   background: var(--primary);
   border: none;
+  width: 174px;
+  justify-content: center;
   cursor: pointer;
-  padding: 24px 20px;
 }
 
 .link-button {
@@ -106,33 +147,26 @@ button {
   font-size: 36px;
   font-family: "Montserrat";
   font-weight: 500;
-  color: var(--black);
+  color: var(--text);
   text-indent: 10px;
 }
 .banner .banner-content .welcome {
   font-family: "Montserrat Alternates";
   font-size: 36px;
   font-weight: 275;
-  color: var(--black);
+  color: var(--text);
   text-indent: 10px;
 }
 .banner .banner-content .sous-titre {
   font-family: "Montserrat";
   font-size: 28px;
   font-weight: 300;
-  color: var(--black);
+  color: var(--text);
 }
 .banner .div-button {
   display: flex;
   justify-content: center;
   padding: 24px 0px 24px 0px;
-}
-.banner .div-button button {
-  border-radius: 32px;
-  background: var(--primary);
-  cursor: pointer;
-  padding: 24px 20px;
-  position: relative;
 }
 .banner .div-button .button-animation {
   transition-duration: 0.25s;
@@ -140,17 +174,23 @@ button {
 .banner .div-button .button-animation:hover {
   background: var(--primary-hover);
 }
+.banner .div-button .button-animation:active {
+  background: var(--primary-active);
+}
 .banner .div-button .link {
   border: none;
 }
 .banner .div-button .white {
-  padding: 24px 20px;
-  background: var(--white);
+  background: var(--reverse-text);
   margin-right: 24px;
-  border: 1px solid var(--black);
+  border: 1px solid var(--text);
+  height: 64px;
+  display: flex;
+  align-items: center;
+  width: 110px;
 }
 .banner .div-button .black {
-  color: var(--black);
+  color: var(--text);
   font-family: "Montserrat";
   font-size: 16px;
   text-decoration: none;
@@ -169,7 +209,7 @@ section .section-title {
 }
 section .section-title .line {
   height: 2px;
-  background: var(--dark-primary);
+  background: var(--primary-reverse);
 }
 section .section-title .line:first-child {
   width: 32px;
@@ -178,16 +218,16 @@ section .section-title .line:last-child {
   flex: 1;
 }
 section .section-title h2 {
-  color: black;
+  color: var(--text);
   font-family: "Montserrat";
   font-size: 40px;
   font-weight: 300;
 }
 section .section-title.secondary-alternate .line {
-  background: var(--secondary-alternate);
+  background: var(--secondary-reverse);
 }
 section .section-title.dark-primary .line {
-  background: var(--dark-primary);
+  background: var(--primary-reverse);
 }
 section .section-title.primary .line {
   background: var(--primary);
@@ -199,7 +239,7 @@ section .section-title.primary .line {
   justify-content: space-between;
 }
 .projets .projet .card {
-  background: var(--dark-primary);
+  background: var(--primary-reverse);
   padding: 24px;
   width: 30%;
   display: flex;
@@ -217,7 +257,7 @@ section .section-title.primary .line {
   font-family: "Montserrat";
   font-size: 24px;
   font-weight: 500;
-  color: var(--black);
+  color: var(--text);
   margin: 0;
 }
 .projets .projet .card .projet-content {
@@ -227,6 +267,7 @@ section .section-title.primary .line {
   text-align: justify;
   align-self: stretch;
   margin: 0;
+  color: var(--text);
 }
 .projets .projet .card .language {
   display: flex;
@@ -238,6 +279,7 @@ section .section-title.primary .line {
   color: var(--black);
   font-size: 16px;
   font-weight: 400;
+  flex-wrap: wrap;
 }
 .projets .projet .card .language .liste-language {
   border-radius: 16px;
@@ -251,18 +293,19 @@ section .section-title.primary .line {
 .projets .projet .card .lien-projet {
   text-align: right;
   font-family: "Montserrat";
-  color: var(--black);
+  color: var(--text);
   font-size: 16px;
   font-weight: 400;
+  margin-top: auto;
 }
 .projets .projet .card-2 {
-  background: var(--secondary-alternate);
+  background: var(--secondary-reverse);
 }
 .projets .projet .card-3 {
-  background: var(--secondary);
+  background: var(--secondary-alternate-reverse);
 }
 .projets .projet .card-3 .projet-3 {
-  color: var(--white);
+  color: var(--reverse-text);
 }
 
 .competence .skills {
@@ -272,13 +315,14 @@ section .section-title.primary .line {
 }
 .competence .skills .title-skills {
   padding-right: 114px;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 400;
   font-family: "Montserrat";
   line-height: 24px;
+  color: var(--text);
 }
 .competence .skills .title-skills.title-method {
-  padding-right: 56px;
+  padding-right: 67px;
 }
 .competence .skills .title-skills.title-others {
   padding-right: 102px;
@@ -289,8 +333,8 @@ section .section-title.primary .line {
   padding: 0;
   margin: 0;
   font-family: "Montserrat";
-  color: var(--white);
-  font-size: 24px;
+  color: var(--reverse-text);
+  font-size: 20px;
   font-weight: 700;
 }
 .competence .skills .capacity .know {
@@ -303,7 +347,7 @@ section .section-title.primary .line {
   line-height: 1;
 }
 .competence .skills .capacity .know.dark-primary {
-  background: var(--dark-primary);
+  background: var(--primary-reverse);
   color: var(--black);
 }
 .competence .skills .capacity .know.secondary-alternate {
@@ -319,22 +363,22 @@ section .section-title.primary .line {
   padding: 17px 0px 0px 17px;
 }
 .training .date {
-  color: var(--Black);
+  color: var(--text);
   text-align: center;
   font-family: Montserrat;
   font-size: 20px;
 }
 .training .title-training {
-  color: var(--Black);
+  color: var(--text);
   font-family: Montserrat;
-  font-size: 28px;
+  font-size: 20px;
   font-style: normal;
   font-weight: 700;
 }
 .training .school {
-  color: var(--Black);
+  color: var(--text);
   font-family: Montserrat;
-  font-size: 24px;
+  font-size: 20px;
   font-style: normal;
   font-weight: 400;
 }
@@ -342,9 +386,9 @@ section .section-title.primary .line {
   margin-top: 24px;
 }
 .training .diploma {
-  color: var(--Black, #00262A);
+  color: var(--text);
   font-family: Montserrat;
-  font-size: 24px;
+  font-size: 20px;
   font-style: normal;
   font-weight: 400;
 }
@@ -357,16 +401,23 @@ section .section-title.primary .line {
   font-weight: 400;
   font-family: "Montserrat";
   align-items: center;
+  color: var(--text);
+  flex-wrap: wrap;
+}
+.contact ul li {
+  gap: 16px;
+  display: flex;
+  align-items: center;
 }
 .contact ul span {
   gap: 16px;
   border-radius: 24px;
-  background: var(--black);
-  color: var(--white);
+  background: var(--background-reverse);
+  color: var(--reverse-text);
   padding: 12px 16px;
 }
 .contact ul span.secondary {
-  background: var(--secondary);
+  background: var(--secondary-alternate-reverse);
 }
 .contact ul .icon-contact {
   font-size: 24px;
@@ -374,7 +425,7 @@ section .section-title.primary .line {
 }
 .contact form {
   margin-top: 48px;
-  background: var(--dark-primary);
+  background: var(--primary-reverse);
   padding: 32px 24px;
   border-radius: 24px;
   display: flex;
@@ -382,6 +433,7 @@ section .section-title.primary .line {
   font-family: "Montserrat";
   font-size: 24px;
   font-weight: 400;
+  color: var(--text);
 }
 .contact form .form-details {
   display: flex;
@@ -437,6 +489,7 @@ section .section-title.primary .line {
   font-size: 24px;
   font-style: normal;
   font-weight: 400;
+  background: var(--background);
 }
 .contact form div.input-div input::-moz-placeholder, .contact form div.input-div textarea::-moz-placeholder {
   color: var(--grey);
@@ -462,33 +515,43 @@ section .section-title.primary .line {
 }
 
 .paragraph {
-  text-align: center;
-  color: var(--Black);
+  color: var(--text);
   font-family: Montserrat;
   font-size: 40px;
   font-style: normal;
   font-weight: 300;
   line-height: 40px;
   margin-top: 60px;
+  text-align: justify;
 }
 
-.cv {
-  width: 100%;
-  background: var(--secondary-alternate);
+.section-content {
   border-radius: 24px;
-  padding: 36px 48px;
-  text-align: left;
-  color: var(--Black);
+  background: var(--secondary-reverse);
+  display: flex;
+  justify-content: space-between;
+}
+.section-content .link-cv {
+  display: flex;
+  gap: 24px;
+  color: var(--text);
   font-family: Montserrat;
   font-size: 40px;
+  font-style: normal;
   font-weight: 300;
+  line-height: 40px;
+  align-items: center;
 }
-.cv span {
-  color: var(--Black);
+.section-content .link-cv span {
+  color: var(--text);
   font-family: Montserrat;
   font-size: 24px;
   font-style: normal;
   font-weight: 400;
+  line-height: 24px;
+}
+.section-content i {
+  font-size: 40px;
 }
 
 footer {
@@ -548,6 +611,43 @@ footer .column-footer a {
   text-decoration: none;
   color: var(--White);
 }
+footer .column-footer a.animation-link {
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 0 26px 0 0px;
+  transition: padding 0.25s ease-in-out;
+}
+footer .column-footer a.animation-link span {
+  position: relative;
+}
+footer .column-footer a.animation-link span::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--white);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease-in-out;
+}
+footer .column-footer a.animation-link i {
+  position: absolute;
+  left: -26px;
+  transition: left 0.25s ease-in-out;
+}
+footer .column-footer a.animation-link:hover {
+  padding: 0 0px 0 26px;
+}
+footer .column-footer a.animation-link:hover span::before {
+  transform: scaleX(1);
+}
+footer .column-footer a.animation-link:hover i {
+  left: 0;
+}
 
 @media (max-width: 767.98px) {
   body {
@@ -588,7 +688,7 @@ footer .column-footer a {
     right: 0;
     width: 230px;
     height: 102vh;
-    background-color: var(--dark-primary);
+    background-color: var(--primary-reverse);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -722,14 +822,24 @@ footer .column-footer a {
   .contact ul .icon-contact {
     font-size: 10px;
   }
-  .cv {
-    font-size: 17px;
+  .section-content {
+    padding: 15px;
+    align-items: center;
   }
-  .cv span {
-    font-size: 15px;
+  .section-content .link-cv {
+    font-size: 12px;
+    gap: 12px;
+  }
+  .section-content .link-cv span {
+    font-size: 7px;
+  }
+  .section-content i {
+    font-size: 13px;
   }
   .paragraph {
-    font-size: 32px;
+    font-size: 30px;
+    padding: 0px;
+    text-align: center;
   }
   footer {
     flex-direction: column;
@@ -773,6 +883,9 @@ footer .column-footer a {
   }
   .competence .skills .capacity {
     font-size: 13px;
+  }
+  .paragraph {
+    font-size: 33px;
   }
   footer .title-footer {
     width: 37%;

@@ -6,7 +6,7 @@
   --dark-primary: #FDC4B6;
   --dark-primary-active: #CA9D92;
   --black: #00262A;
-  --white: white;
+  --white: #FFF9F8;
   --secondary-alternate: #83C5BE;
   --secondary: #006D77;
   --grey: #D9C3C3;
@@ -14,15 +14,24 @@
 
 :root {
   --background: var(--white);
+  --background-reverse: var(--black);
   --text: var(--black);
   --reverse-text: var(--white);
+  --primary-reverse: #FDC4B6;
+  --secondary-reverse: #83C5BE;
+  --secondary-alternate-reverse: #006D77;
+  --primary: #EA7070;
 }
 
 body.dark {
   --background: var(--black);
+  --background-reverse: var(--white);
   --text: var(--white);
   --reverse-text: var(--black);
   --primary: #FDC4B6;
+  --primary-reverse: #EA7070;
+  --secondary-reverse: #006D77;
+  --secondary-alternate-reverse: #83C5BE;
 }
 
 body {
