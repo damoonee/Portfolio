@@ -2,7 +2,6 @@
 @import "reset.css";
 body {
   background-color: var(--background);
-  height: 500vh;
 }
 body::-webkit-scrollbar {
   width: 10px;
@@ -424,6 +423,9 @@ section .section-title.primary .line {
   display: flex;
   align-items: center;
 }
+.contact ul a {
+  text-decoration: none;
+}
 .contact ul span {
   gap: 16px;
   border-radius: 24px;
@@ -823,6 +825,9 @@ footer .column-footer a.animation-link:hover i {
   .competence .skills .title-skills {
     display: contents;
   }
+  .training .date {
+    text-align: left;
+  }
   .training .training-content {
     gap: 50px;
     flex-direction: column;
@@ -869,7 +874,7 @@ footer .column-footer a.animation-link:hover i {
     color: var(--grey);
   }
   .contact ul {
-    font-size: 9px;
+    font-size: 12px;
   }
   .contact ul .icon-contact {
     font-size: 10px;
@@ -883,13 +888,13 @@ footer .column-footer a.animation-link:hover i {
     gap: 12px;
   }
   .section-content .link-cv span {
-    font-size: 7px;
+    font-size: 10px;
   }
   .section-content i {
     font-size: 13px;
   }
   .paragraph {
-    font-size: 30px;
+    font-size: 20px;
     padding: 0px;
     text-align: center;
   }
@@ -911,7 +916,10 @@ footer .column-footer a.animation-link:hover i {
     flex-direction: column;
     gap: 20px;
   }
+  footer .footer-content .column-footer {
+    font-size: 17px;
+  }
   footer .footer-content .column-footer .title-column {
-    font-size: 32px;
+    font-size: 25px;
   }
 }

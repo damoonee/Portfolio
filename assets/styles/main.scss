@@ -3,7 +3,6 @@
 
 body {
     background-color: var(--background);
-    height: 500vh;
 
     &::-webkit-scrollbar {
         width: 10px;
@@ -507,6 +506,10 @@ section {
             gap: 16px;
             display: flex;
             align-items: center;        
+        }
+
+        a {
+            text-decoration: none;
         }
 
         & span {
@@ -1013,6 +1016,10 @@ footer {
 
     .training {
 
+        .date {
+            text-align: left;
+        }
+
         .training-content {
             gap: 50px;
             flex-direction: column;
@@ -1074,7 +1081,7 @@ footer {
         }
 
         ul {
-            font-size: 9px;
+            font-size: 12px;
 
             .icon-contact {
                 font-size: 10px;
@@ -1091,7 +1098,7 @@ footer {
             gap: 12px;
 
             span {
-                font-size: 7px;
+                font-size: 10px;
             }
         }
 
@@ -1101,7 +1108,7 @@ footer {
     }
 
     .paragraph {
-        font-size: 30px;
+        font-size: 20px;
         padding: 0px;
         text-align: center;
     }
@@ -1128,8 +1135,9 @@ footer {
             gap: 20px;
 
             .column-footer {
+                font-size: 17px;
                 .title-column {
-                    font-size: 32px;
+                    font-size: 25px;
                 }
             }
         }
